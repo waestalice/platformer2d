@@ -1,0 +1,4 @@
+repository "platformer2d@waestalice@cloud"
+  path "/"
+    br "/main"
+    co "/main"
