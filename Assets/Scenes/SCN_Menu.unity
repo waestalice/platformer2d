@@ -960,7 +960,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 24473801625092059, guid: 0af5bb6acfe3fd94b8d86e069b00260f, type: 3}
       propertyPath: m_text
-      value: 'Credits
+      value: 'About
 
 '
       objectReference: {fileID: 0}
@@ -1046,7 +1046,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 872367806331092088, guid: 0af5bb6acfe3fd94b8d86e069b00260f, type: 3}
       propertyPath: m_Name
-      value: PFB_Credits
+      value: PFB_About
       objectReference: {fileID: 0}
     - target: {fileID: 5580541253964229229, guid: 0af5bb6acfe3fd94b8d86e069b00260f, type: 3}
       propertyPath: m_Interactable
