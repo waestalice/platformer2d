@@ -4052,6 +4052,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5580541253964229229, guid: 0af5bb6acfe3fd94b8d86e069b00260f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5580541253964229229, guid: 0af5bb6acfe3fd94b8d86e069b00260f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1857168275}
@@ -4060,11 +4064,19 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5580541253964229229, guid: 0af5bb6acfe3fd94b8d86e069b00260f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5580541253964229229, guid: 0af5bb6acfe3fd94b8d86e069b00260f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Quit
       objectReference: {fileID: 0}
     - target: {fileID: 5580541253964229229, guid: 0af5bb6acfe3fd94b8d86e069b00260f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ButtonExit, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5580541253964229229, guid: 0af5bb6acfe3fd94b8d86e069b00260f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: ButtonExit, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5580541253964229229, guid: 0af5bb6acfe3fd94b8d86e069b00260f, type: 3}
