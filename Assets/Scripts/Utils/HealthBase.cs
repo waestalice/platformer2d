@@ -24,16 +24,20 @@ public class HealthBase : MonoBehaviour
    }
 
    public void Damage(int damage)
-   {
-	   if(_isDead) return;
+{
+    if (transform != null)
+    {
+        if (_isDead) return;
 
-	   _currentLife -= damage;
+        _currentLife -= damage;
 
-	   if(_currentLife <= 0)
-	   {
-		   Kill();
-	   }
-   }
+        if (_currentLife <= 0)
+        {
+            Kill();
+        }
+    }
+}
+
 
    private void Kill()
    {
