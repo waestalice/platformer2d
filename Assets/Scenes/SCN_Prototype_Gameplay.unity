@@ -417,7 +417,7 @@ MonoBehaviour:
   m_ZDamping: 1
   m_TargetMovementOnly: 1
   m_ScreenX: 0.5
-  m_ScreenY: 0.49
+  m_ScreenY: 0.5
   m_CameraDistance: 10
   m_DeadZoneWidth: 0.53
   m_DeadZoneHeight: 0.71
@@ -1307,6 +1307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myRigidbody: {fileID: 436238759}
+  healthBase: {fileID: 436238764}
   friction: {x: 0.8, y: 0}
   speed: 20
   speedRun: 21
@@ -1316,6 +1317,7 @@ MonoBehaviour:
   animationDuration: 0.3
   ease: 27
   boolRun: Run
+  triggerDeath: Death
   animator: {fileID: 851609497}
   playerSwipeDuration: 0.1
 --- !u!114 &436238764
@@ -1331,8 +1333,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartLife: 10
-  destroyOnKill: 1
-  delayToKill: 0.4
+  destroyOnKill: 0
+  delayToKill: 1
   _flashColor: {fileID: 851609500}
 --- !u!212 &455392715 stripped
 SpriteRenderer:
@@ -2483,6 +2485,19 @@ MonoBehaviour:
   - {fileID: 1200646227}
   color: {r: 0.9245283, g: 0.33434182, b: 0.33434182, a: 1}
   duration: 0.2
+--- !u!114 &851609501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851609496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3861ec36a98e6a84bbe87c192b9fe604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 436238763}
 --- !u!1 &855842975
 GameObject:
   m_ObjectHideFlags: 0
@@ -2632,6 +2647,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8835229685202505509, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
       insertIndex: -1
       addedObject: {fileID: 851609500}
+    - targetCorrespondingSourceObject: {fileID: 8835229685202505509, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 851609501}
   m_SourcePrefab: {fileID: 100100000, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
 --- !u!1001 &886707499
 PrefabInstance:
@@ -3359,6 +3377,8 @@ MonoBehaviour:
   damage: 10
   animator: {fileID: 0}
   triggerAttack: Attack
+  triggerKill: Kill
+  timeToDestroy: 1
   healthBase: {fileID: 0}
 --- !u!50 &1178337160
 Rigidbody2D:
@@ -3646,8 +3666,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b92c532bc8569442818898f2f551bd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartLife: 10
-  destroyOnKill: 1
+  StartLife: 3
+  destroyOnKill: 0
   delayToKill: 0.3
   _flashColor: {fileID: 1270001497}
 --- !u!114 &1270001499
@@ -3663,8 +3683,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  animator: {fileID: 1844502988}
+  animator: {fileID: 1861105496}
   triggerAttack: Attack
+  triggerKill: Death
+  timeToDestroy: 1
   healthBase: {fileID: 1270001498}
 --- !u!1 &1318916417
 GameObject:
@@ -4299,7 +4321,7 @@ Transform:
   m_GameObject: {fileID: 1523171232}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.3390806, y: 0.050938606, z: -18.425247}
+  m_LocalPosition: {x: 2.3390806, y: 0.3509388, z: -18.425247}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4533,7 +4555,7 @@ Transform:
   m_GameObject: {fileID: 1533355172}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.3390806, y: 0.050938606, z: -18.425247}
+  m_LocalPosition: {x: 2.3390806, y: 0.3509388, z: -18.425247}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5505,14 +5527,14 @@ Transform:
   - {fileID: 1178337158}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1844502988 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 2403329696302037006, guid: 3de838754c767a446a5473969062a84e, type: 3}
-  m_PrefabInstance: {fileID: 590781732}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1861105494 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8073972946613542793, guid: 3de838754c767a446a5473969062a84e, type: 3}
+  m_PrefabInstance: {fileID: 261529852}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1861105496 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2403329696302037006, guid: 3de838754c767a446a5473969062a84e, type: 3}
   m_PrefabInstance: {fileID: 261529852}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1907024033 stripped

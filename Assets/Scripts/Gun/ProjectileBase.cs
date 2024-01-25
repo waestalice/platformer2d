@@ -20,7 +20,6 @@ public class ProjectileBase : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
-    {
 
         var enemy = collision.transform.GetComponent<EnemyBase>();
 
