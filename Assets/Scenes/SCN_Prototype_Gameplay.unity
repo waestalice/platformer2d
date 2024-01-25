@@ -2117,7 +2117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabProjectile: {fileID: 8205767661038952203, guid: 2b5cbf39fa214e7479b5f6ee127203d8, type: 3}
   positionToShoot: {fileID: 1697321376}
-  timeBetweenShoot: 0.1
+  timeBetweenShoot: 0.2
   playerSideReference: {fileID: 436238762}
 --- !u!4 &799544568
 Transform:
@@ -3632,8 +3632,8 @@ MonoBehaviour:
   - {fileID: 12788742}
   - {fileID: 44642778}
   - {fileID: 1690226069}
-  color: {r: 0.9245283, g: 0.33434182, b: 0.33434182, a: 1}
-  duration: 0.4
+  color: {r: 0.9245283, g: 0.24705882, b: 0.33434182, a: 1}
+  duration: 0.1
 --- !u!114 &1270001498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3648,8 +3648,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartLife: 10
   destroyOnKill: 1
-  delayToKill: 0
-  _flashColor: {fileID: 0}
+  delayToKill: 0.3
+  _flashColor: {fileID: 1270001497}
 --- !u!114 &1270001499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5006,7 +5006,7 @@ Transform:
   m_GameObject: {fileID: 1697321375}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.21, y: 2.58, z: 0}
+  m_LocalPosition: {x: 2.21, y: 0.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

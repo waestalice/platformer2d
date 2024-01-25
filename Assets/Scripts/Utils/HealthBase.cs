@@ -30,8 +30,6 @@ public class HealthBase : MonoBehaviour
    }
 
    public void Damage(int damage)
-{
-    if (transform != null)
     {
         if (_isDead) return;
 
@@ -47,7 +45,6 @@ public class HealthBase : MonoBehaviour
             _flashColor.Flash();
         }
     }
-}
 
 
    private void Kill()

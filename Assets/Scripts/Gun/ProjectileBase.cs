@@ -21,8 +21,6 @@ public class ProjectileBase : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Adicione mensagens de depuração para verificar a detecção de colisão
-        Debug.Log("Colisão detectada com: " + collision.transform.name);
 
         var enemy = collision.transform.GetComponent<EnemyBase>();
 
