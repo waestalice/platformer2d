@@ -1312,9 +1312,9 @@ MonoBehaviour:
   speed: 20
   speedRun: 21
   forceJump: 25
-  JumpScaleY: 1.1
-  JumpScaleX: 0.7
-  animationDuration: 0.3
+  soJumpScaleY: {fileID: 11400000, guid: 9f186db73ae0b1a469e47f204eba9116, type: 2}
+  soJumpScaleX: {fileID: 11400000, guid: bac770b17421aff49b15fec38c66fd58, type: 2}
+  soAnimationDuration: {fileID: 11400000, guid: ea07d19906820a8468d60e900d6af5c5, type: 2}
   ease: 27
   boolRun: Run
   triggerDeath: Death
@@ -3037,7 +3037,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1026155040}
-  - component: {fileID: 1026155041}
   m_Layer: 5
   m_Name: HUD_Coins
   m_TagString: Untagged
@@ -3066,19 +3065,6 @@ RectTransform:
   m_AnchoredPosition: {x: 267.87347, y: -113.952515}
   m_SizeDelta: {x: 446.7469, y: 150.905}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1026155041
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1026155039}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49b31614df6b5ee44a40de7a82099320, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textCoins: {fileID: 1764053982}
 --- !u!1 &1056592326
 GameObject:
   m_ObjectHideFlags: 0
@@ -4118,7 +4104,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72c76c39796ef2a4db410c9c7eeebf47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coins: 0
+  coins: {fileID: 11400000, guid: 90a3a10869b757e4fb2eaa0fb84d765b, type: 2}
+  uiTextCoins: {fileID: 1764053982}
 --- !u!4 &1406809965
 Transform:
   m_ObjectHideFlags: 0
@@ -5059,6 +5046,7 @@ GameObject:
   - component: {fileID: 1764053981}
   - component: {fileID: 1764053983}
   - component: {fileID: 1764053982}
+  - component: {fileID: 1764053984}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -5182,6 +5170,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1764053980}
   m_CullTransparentMesh: 1
+--- !u!114 &1764053984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764053980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3348e4ee04fbd8c4e99899f1adb4e9f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soInt: {fileID: 11400000, guid: 90a3a10869b757e4fb2eaa0fb84d765b, type: 2}
+  uiTextValue: {fileID: 1764053982}
 --- !u!1 &1764191360
 GameObject:
   m_ObjectHideFlags: 0
