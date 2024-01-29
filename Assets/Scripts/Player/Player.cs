@@ -23,7 +23,9 @@ public class Player : MonoBehaviour
     public float distToGround;
     public float spaceToGround = .1f;
     public LayerMask groundLayer;
+    public int jumpCount = 2;
     public ParticleSystem jumpVFX;
+
 
 
     private void Awake()
@@ -43,8 +45,14 @@ public class Player : MonoBehaviour
     private bool IsGrounded()
     {
         Debug.DrawRay(transform.position, -Vector2.up, Color.magenta, distToGround + spaceToGround);
-        return Physics2D.
-        Raycast(new Vector3(transform.position.x, transform.position.y + .5f), Vector2.down, groundLayer);
+        bool isGrounded = Physics2D.Raycast(new Vector3(transform.position.x, transform.position.y + .5f), Vector2.down, groundLayer);
+
+        if (isGrounded)
+        {
+            jumpCount = 3;
+        }
+
+        return isGrounded;
     }
 
 
@@ -111,9 +119,11 @@ public class Player : MonoBehaviour
         }
     }
     
-    private void HandleJump()
+        private void HandleJump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+        bool isGrounded = IsGrounded();
+
+        if (Input.GetKeyDown(KeyCode.Space) && (jumpCount > 0))
         {
             myRigidbody.velocity = Vector2.up * soPlayerSetup.forceJump;
             myRigidbody.transform.localScale = Vector2.one;
@@ -122,8 +132,11 @@ public class Player : MonoBehaviour
 
             HandleScaleJump();
             PlayJumpVFX();
+
+            jumpCount--;
         }
     }
+
 
     private void PlayJumpVFX()
     {
